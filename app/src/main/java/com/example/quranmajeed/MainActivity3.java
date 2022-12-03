@@ -1,11 +1,18 @@
 package com.example.quranmajeed;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -243,19 +250,45 @@ public class MainActivity3 extends AppCompatActivity {
             " النَّاس"
     };
 
-    TextView txt;
-
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        txt = findViewById(R.id.textView4);
-
-        for(int i=0;i<114;i++)
+        LinearLayout linearLayout = new LinearLayout(this);
+        setContentView(linearLayout);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        TextView textView = new TextView(this);
+        for( int i = 0; i < 1; i++ )
         {
             int j = i + 1;
-            txt.append("\n" + j + ". " +String.valueOf(surahNames[i]) +"\n" + String.valueOf(urduNames[i]) + "\n");
+            textView.append("\n" + j + ". " +String.valueOf(surahNames[i]) +"\n" + String.valueOf(urduNames[i]) + "\n");
+            linearLayout.addView(textView);
         }
+
+//        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.constraint);
+//        int height = 70;
+//
+//        for(int i=0;i<surahNames.length;i++)
+//        {
+//            int j = i + 1;
+//            TextView txt = new TextView(this);
+//            txt.append("\n" + j + ". " +String.valueOf(surahNames[i]) +"\n" + String.valueOf(urduNames[i]) + "\n");
+//            txt.getLayoutParams().height = height;
+//            layout.addView(txt);
+//        }
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity4();
+//                Toast.makeText(MainActivity3.this, "Hello "+textView.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void openActivity4() {
+        Intent intent = new Intent(this, MainActivity4.class);
+        startActivity(intent);
     }
 }

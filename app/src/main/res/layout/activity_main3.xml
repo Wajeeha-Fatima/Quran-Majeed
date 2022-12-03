@@ -7,34 +7,9 @@
     android:fillViewport="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="54mm"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="27dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    <View-->
-<!--        android:id="@+id/view"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="1dp"-->
-<!--        android:layout_marginTop="64dp"-->
-<!--        android:layout_marginEnd="91dp"-->
-<!--        android:background="@color/grey"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".MainActivity3"/>
 
 </ScrollView>
