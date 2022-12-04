@@ -2,6 +2,7 @@ package com.example.quranmajeed;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,9 +40,15 @@ public class SurahList extends AppCompatActivity {
         myListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               String text = "Item" + position + " " + ((TextView) view).getText().toString();
-                Toast.makeText(SurahList.this, text, Toast.LENGTH_SHORT).show();
+                openSurahText(position);
+//               String text = id + " " + ((TextView) view).getText().toString();
+//               Toast.makeText(SurahList.this, text, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void openSurahText(int position) {
+        Intent intent = new Intent(this, SurahText.class);
+        intent.putExtra("Index", Integer.toString(position));
+        startActivity(intent);
     }
 }

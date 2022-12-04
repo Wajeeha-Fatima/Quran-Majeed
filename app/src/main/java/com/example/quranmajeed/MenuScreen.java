@@ -9,25 +9,37 @@ import android.widget.Button;
 
 public class MenuScreen extends AppCompatActivity {
 
-    Button btn;
+    Button btn1, btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen_menu);
 
-        btn = findViewById(R.id.button);
+        btn1 = findViewById(R.id.indexBtn);
+        btn2 = findViewById(R.id.searchBtn);
 
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity5();
+
+                openSurahList();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openInputScreen();
             }
         });
     }
 
-    private void openActivity5() {
+    private void openSurahList() {
+        Intent intent = new Intent(this, SurahList.class);
+        startActivity(intent);
+    }
+    private void openInputScreen() {
         Intent intent = new Intent(this, SurahList.class);
         startActivity(intent);
     }
