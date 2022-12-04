@@ -11,8 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -250,6 +254,9 @@ public class MainActivity3 extends AppCompatActivity {
             " النَّاس"
     };
 
+    ListView listview;
+    ArrayList<Integer> arrayList = new ArrayList<>();
+
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -279,13 +286,23 @@ public class MainActivity3 extends AppCompatActivity {
 //            layout.addView(txt);
 //        }
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity4();
-//                Toast.makeText(MainActivity3.this, "Hello "+textView.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        listview = findViewById(R.id.listview);
+        com.example.quranmajeed.ListAdapter listAdapter = new com.example.quranmajeed.ListAdapter(MainActivity3.this, arrayList);
+        listview.setAdapter(listAdapter);
+
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+
+//        textView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openActivity4();
+////                Toast.makeText(MainActivity3.this, "Hello "+textView.getText(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
     private void openActivity4() {
         Intent intent = new Intent(this, MainActivity4.class);
