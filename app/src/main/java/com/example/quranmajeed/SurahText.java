@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity4 extends AppCompatActivity {
+public class SurahText extends AppCompatActivity {
 
     public String[] QuranArabicText = {
             "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ",
@@ -21,7 +21,7 @@ public class MainActivity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.text_surah);
 
         LinearLayout linearLayout = new LinearLayout(this);
         setContentView(linearLayout);

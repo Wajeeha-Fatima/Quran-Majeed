@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity5 extends AppCompatActivity {
+public class SurahList extends AppCompatActivity {
 
     public String[] surahNames = {
             "Al-Fatihah",
@@ -251,7 +251,7 @@ public class MainActivity5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.list_surah);
 
         ListView myListview = findViewById(R.id.myListView);
         ArrayList<String> arrayList = new ArrayList<>();
@@ -260,7 +260,6 @@ public class MainActivity5 extends AppCompatActivity {
             int j = i + 1;
             arrayList.add(j + ".  " + String.valueOf(surahNames[i]) + "\n" + String.valueOf(urduNames[i]));
         }
-//        arrayList.add("\n");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
         myListview.setAdapter(arrayAdapter);
@@ -269,7 +268,7 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                String text = "Item" + position + " " + ((TextView) view).getText().toString();
-                Toast.makeText(MainActivity5.this, text, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SurahList.this, text, Toast.LENGTH_SHORT).show();
             }
         });
     }
