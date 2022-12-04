@@ -287,14 +287,12 @@ public class MainActivity3 extends AppCompatActivity {
 //        }
 
         listview = findViewById(R.id.listview);
-        com.example.quranmajeed.ListAdapter listAdapter = new com.example.quranmajeed.ListAdapter(MainActivity3.this, arrayList);
-        listview.setAdapter(listAdapter);
+//        com.example.quranmajeed.ListAdapter listAdapter = new com.example.quranmajeed.ListAdapter(MainActivity3.this, arrayList);
+//        listview.setAdapter(listAdapter);
 
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
-        arrayList.add(4);
-        arrayList.add(5);
+        for(int i=0; i<50; i++) {
+            arrayList.add(i);
+        }
 
 //        textView.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -22,13 +22,13 @@ public class MainActivity2 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity3();
+                openActivity5();
             }
         });
     }
 
-    private void openActivity3() {
-        Intent intent = new Intent(this, MainActivity3.class);
+    private void openActivity5() {
+        Intent intent = new Intent(this, MainActivity5.class);
         startActivity(intent);
     }
 }
