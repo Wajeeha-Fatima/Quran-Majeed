@@ -25,5 +25,27 @@ public class SurahText extends AppCompatActivity {
         int number = getIntent().getIntExtra("Number", 0);
 //        surahText.setText(Integer.toString(number));
 //        Toast.makeText(this, "number is " +number+1, Toast.LENGTH_SHORT).show();
+
+        int startIndex = qdh.getSurahStart(number);
+        if(number != 113) {
+            int nextSurahStartIndex = qdh.getSurahStart(number+1);
+            nextSurahStartIndex--;
+            String str = "";
+            for(int i=startIndex-1; i<nextSurahStartIndex; i++) {
+                str+=quranText[i];
+                str+="\n";
+            }
+            surahText.setText(str);
+
+        } else if(number == 113){
+            int length = quranText.length;
+            int lastIndex = length - 1;
+            String str = "";
+            for(int i=startIndex-1; i<=lastIndex; i++) {
+                str+=quranText[i];
+                str+="\n";
+            }
+            surahText.setText(str);
+        }
     }
 }
