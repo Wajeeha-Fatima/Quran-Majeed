@@ -7,7 +7,7 @@
     tools:context=".SurahList">
 
     <ListView
-        android:id="@+id/myListView"
+        android:id="@+id/ConstraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

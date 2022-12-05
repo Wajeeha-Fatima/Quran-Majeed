@@ -8,11 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SurahList extends AppCompatActivity {
 
@@ -26,7 +23,7 @@ public class SurahList extends AppCompatActivity {
         setContentView(R.layout.list_surah);
 
         qdh = new QDH();
-        myListview = findViewById(R.id.myListView);
+        myListview = findViewById(R.id.ConstraintLayout);
         arrayList = new ArrayList<String>();
 
         for(int i=0; i<qdh.englishSurahNames.length; i++) {
@@ -37,18 +34,18 @@ public class SurahList extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
         myListview.setAdapter(arrayAdapter);
 
-        myListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openSurahText(position);
+//        myListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                openSurahText(position);
 //               String text = id + " " + ((TextView) view).getText().toString();
 //               Toast.makeText(SurahList.this, text, Toast.LENGTH_SHORT).show();
-            }
-        });
+//            }
+//        });
     }
-    private void openSurahText(int position) {
-        Intent intent = new Intent(this, SurahText.class);
-        intent.putExtra("Index", Integer.toString(position));
-        startActivity(intent);
-    }
+//    private void openSurahText(int position) {
+//        Intent intent = new Intent(this, SurahText.class);
+//        intent.putExtra("Index", Integer.toString(position));
+//        startActivity(intent);
+//    }
 }
