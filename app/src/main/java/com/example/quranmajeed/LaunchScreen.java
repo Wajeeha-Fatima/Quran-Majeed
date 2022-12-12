@@ -18,6 +18,7 @@ public class LaunchScreen extends AppCompatActivity {
         setContentView(R.layout.screen_launch);
 
         timer = new Timer();
+        //hello
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
