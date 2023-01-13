@@ -16,15 +16,17 @@ public class SurahText extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.surah_text);
-
         surahText = findViewById(R.id.textView);
-
         qdh = new QDH();
         quranArabicText = new QuranArabicText();
         String[] quranText = quranArabicText.QuranArabicText;
         int number = getIntent().getIntExtra("Number", 0);
-//        surahText.setText(Integer.toString(number));
-//        Toast.makeText(this, "number is " +number+1, Toast.LENGTH_SHORT).show();
+//        int sura = 4;
+//        int ayat = 10;
+//        int suraCount = qdh.SSP[sura-1];
+//        int getAyatIndex = suraCount + ayat - 1;
+////        surahText.setText(Integer.toString(number));
+//        Toast.makeText(this, quranArabicText.QuranArabicText[getAyatIndex], Toast.LENGTH_SHORT).show();
 
         int startIndex = qdh.getSurahStart(number);
         if(number != 113) {
