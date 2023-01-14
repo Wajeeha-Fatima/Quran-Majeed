@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MenuScreen extends AppCompatActivity {
-    Button btn, btn1;
+    Button btn, btn1, btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MenuScreen extends AppCompatActivity {
 
         btn = findViewById(R.id.button);
         btn1 = findViewById(R.id.button2);
+        btn2 = findViewById(R.id.button3);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,9 +32,20 @@ public class MenuScreen extends AppCompatActivity {
                 openGitHub("https://github.com/Wajeeha-Fatima/Quran-Majeed.git");
             }
         });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSearch();
+            }
+        });
     }
     private void openSurahList() {
         Intent intent = new Intent(this, SurahList.class);
+        startActivity(intent);
+    }
+    private void openSearch() {
+        Intent intent = new Intent(this, SearchSurah.class);
         startActivity(intent);
     }
     public void openGitHub(String url) {
